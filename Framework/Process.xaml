@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1938,9169</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1938,12689</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -106,7 +106,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1948,9104" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1948,11704" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="UserNamegateway" />
       <Variable x:TypeArguments="ss:SecureString" Name="PasswordGateway" />
@@ -246,13 +246,13 @@
         </ui:ForEachRow.Body>
       </ui:ForEachRow>
     </Sequence>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each UnitGUID" sap:VirtualizedContainerService.HintSize="1886,53" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[UnitGuidList]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each UnitGUID" sap:VirtualizedContainerService.HintSize="1886,2340" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[UnitGuidList]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Teacher information Body" sap:VirtualizedContainerService.HintSize="1151,1540" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <Sequence DisplayName="Teacher information Body" sap:VirtualizedContainerService.HintSize="1151,2213" sap2010:WorkflowViewState.IdRef="Sequence_13">
             <Sequence.Variables>
               <Variable x:TypeArguments="njl:JArray" Name="JSONArray" />
             </Sequence.Variables>
@@ -304,7 +304,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <Sequence DisplayName="Get  teacher info from education API" sap:VirtualizedContainerService.HintSize="1089,83" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Get  teacher info from education API" sap:VirtualizedContainerService.HintSize="1089,885" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <Sequence.Variables>
                 <Variable x:TypeArguments="njl:JToken" Name="Token" />
                 <Variable x:TypeArguments="x:String" Name="Schooltype" />
@@ -315,11 +315,11 @@
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="388,53" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="423,163" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
@@ -350,15 +350,15 @@
                 </ui:MultipleAssign.AssignOperations>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
-              <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;Cred_APIGateway&quot;).ToString.Trim]" CacheStrategy="None" DisplayName="Private: Get Credential" sap:VirtualizedContainerService.HintSize="388,184" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[PasswordGateway]" Username="[UserNamegateway]" />
-              <a:Get_Token ExpiresIn="{x:Null}" FoundToken="{x:Null}" TokenType="{x:Null}" DisplayName="Get Token" DomainURL="[DomainURL]" sap:VirtualizedContainerService.HintSize="388,189" sap2010:WorkflowViewState.IdRef="Get_Token_2" NumberOfTries="1" Password="[PasswordGateway]" RequestTimeout="15000" Token="[Token]" Username="[UserNamegateway]" />
-              <a1:Get_TeacherLectureMinutes DisplayName="Get TeacherLectureMinutes" DomainURL="[DomainURL]" FromDate="[FromDate]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Get_TeacherLectureMinutes_1" JSONarray="[JSONArray]" Success="[Success]" ToDate="[ToDate]" Token="[Token]" UnitID="[UnitID]" Version="[Version]" />
-              <If Condition="[Success]" DisplayName="If - success" sap:VirtualizedContainerService.HintSize="388,53" sap2010:WorkflowViewState.IdRef="If_2">
+              <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;Cred_APIGateway&quot;).ToString.Trim]" CacheStrategy="None" DisplayName="Private: Get Credential" sap:VirtualizedContainerService.HintSize="423,184" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[PasswordGateway]" Username="[UserNamegateway]" />
+              <a:Get_Token ExpiresIn="{x:Null}" FoundToken="{x:Null}" TokenType="{x:Null}" DisplayName="Get Token" DomainURL="[DomainURL]" sap:VirtualizedContainerService.HintSize="423,189" sap2010:WorkflowViewState.IdRef="Get_Token_2" NumberOfTries="1" Password="[PasswordGateway]" RequestTimeout="15000" Token="[Token]" Username="[UserNamegateway]" />
+              <a1:Get_TeacherLectureMinutes DisplayName="Get TeacherLectureMinutes" DomainURL="[DomainURL]" FromDate="[FromDate]" sap:VirtualizedContainerService.HintSize="423,25" sap2010:WorkflowViewState.IdRef="Get_TeacherLectureMinutes_1" JSONarray="[JSONArray]" Success="[Success]" ToDate="[ToDate]" Token="[Token]" UnitID="[UnitID]" Version="[Version]" />
+              <If Condition="[Success]" DisplayName="If - success" sap:VirtualizedContainerService.HintSize="423,53" sap2010:WorkflowViewState.IdRef="If_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -366,35 +366,35 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="450,203" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence sap:VirtualizedContainerService.HintSize="450,205" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Gotten UnitID from schooltype&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Gotten UnitID from schooltype&quot;]" />
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence sap:VirtualizedContainerService.HintSize="450,270" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Failed to get UnitID from schooltype&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Failed to get UnitID from schooltype&quot;]" />
                     <Throw DisplayName="Throw SE" Exception="[New System.exception(&quot;Failed to get unitID from school.&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_2" />
                   </Sequence>
                 </If.Else>
               </If>
             </Sequence>
-            <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1089,1213" sap2010:WorkflowViewState.IdRef="ForEach`1_22" Values="[JSONArray]">
+            <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1089,1084" sap2010:WorkflowViewState.IdRef="ForEach`1_22" Values="[JSONArray]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="njl:JObject">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="njl:JObject" Name="currentItem" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1053,1087" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1053,957" sap2010:WorkflowViewState.IdRef="Sequence_59">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="PersonID" />
                     </Sequence.Variables>
@@ -411,7 +411,7 @@
                         <InArgument x:TypeArguments="x:String">[currentItem("personId").ToString]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <If Condition="[MergedDict.ContainsKey(PersonID)]" sap:VirtualizedContainerService.HintSize="991,854" sap2010:WorkflowViewState.IdRef="If_17">
+                    <If Condition="[MergedDict.ContainsKey(PersonID)]" sap:VirtualizedContainerService.HintSize="991,724" sap2010:WorkflowViewState.IdRef="If_17">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -419,7 +419,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="496,693" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                        <Sequence sap:VirtualizedContainerService.HintSize="496,563" sap2010:WorkflowViewState.IdRef="Sequence_60">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="njl:JObject" Name="ExistingGroups" />
                             <Variable x:TypeArguments="njl:JToken" Name="newGroups" />
@@ -430,7 +430,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_36">
+                          <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_36">
                             <Assign.To>
                               <OutArgument x:TypeArguments="njl:JObject">[ExistingGroups]</OutArgument>
                             </Assign.To>
@@ -438,7 +438,7 @@
                               <InArgument x:TypeArguments="njl:JObject">[MergedDict(PersonID)]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_38">
+                          <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_38">
                             <Assign.To>
                               <OutArgument x:TypeArguments="njl:JToken">[newGroups]</OutArgument>
                             </Assign.To>
@@ -446,7 +446,7 @@
                               <InArgument x:TypeArguments="njl:JToken">[currentItem("groups")]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_39">
+                          <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_39">
                             <Assign.To>
                               <OutArgument x:TypeArguments="njl:JArray">[MergedGroups]</OutArgument>
                             </Assign.To>
@@ -454,7 +454,7 @@
                               <InArgument x:TypeArguments="njl:JArray">[JArray.FromObject(ExistingGroups("groups").Concat(newGroups).ToList())]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_40">
+                          <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_40">
                             <Assign.To>
                               <OutArgument x:TypeArguments="njl:JToken">[MergedDict(PersonID).Item("groups")]</OutArgument>
                             </Assign.To>
@@ -462,17 +462,16 @@
                               <InArgument x:TypeArguments="njl:JToken">[MergedGroups]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;hello&quot;]" />
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence sap:VirtualizedContainerService.HintSize="450,247" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                        <Sequence sap:VirtualizedContainerService.HintSize="450,248" sap2010:WorkflowViewState.IdRef="Sequence_61">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="388,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Add">
+                          <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="388,137" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Add">
                             <InvokeMethod.TargetObject>
                               <InArgument x:TypeArguments="scg:Dictionary(x:String, njl:JObject)">[MergedDict]</InArgument>
                             </InvokeMethod.TargetObject>
@@ -497,21 +496,25 @@
       </ui:ForEach.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, njl:JObject)" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1886,6349" sap2010:WorkflowViewState.IdRef="ForEach`1_34" Values="[MergedDict]">
+    <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, njl:JObject)" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1886,6662" sap2010:WorkflowViewState.IdRef="ForEach`1_34" Values="[MergedDict]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, njl:JObject)">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="scg:KeyValuePair(x:String, njl:JObject)" Name="Teacher" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Teacher Body" sap:VirtualizedContainerService.HintSize="1850,6222" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence DisplayName="Teacher Body" sap:VirtualizedContainerService.HintSize="1850,6535" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dt_PupilsPerProgramme" />
-              <Variable x:TypeArguments="scg:Dictionary(x:String, x:Int32)" Default="[New Dictionary(Of String, Int32)]" Name="ProgrammeProductSum" />
+              <Variable x:TypeArguments="scg:Dictionary(x:String, x:Int32)" Name="ProgrammeProductSum">
+                <Variable.Default>
+                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Int32)" ExpressionText="New Dictionary(Of String, Int32)" />
+                </Variable.Default>
+              </Variable>
               <Variable x:TypeArguments="sd:DataTable" Name="dt_ProgrammeSums" />
               <Variable x:TypeArguments="x:String" Name="MentorProgram" />
             </Sequence.Variables>
@@ -520,7 +523,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[not (Teacher.Value(&quot;groups&quot;).Count = 0)]" DisplayName="If - groups exists" sap:VirtualizedContainerService.HintSize="1788,6111" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[not (Teacher.Value(&quot;groups&quot;).Count = 0)]" DisplayName="If - groups exists" sap:VirtualizedContainerService.HintSize="1788,6424" sap2010:WorkflowViewState.IdRef="If_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -528,15 +531,15 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="1752,5919" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                <Sequence sap:VirtualizedContainerService.HintSize="1752,6232" sap2010:WorkflowViewState.IdRef="Sequence_16">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Int32" Default="0" Name="GroupNr" />
-                    <Variable x:TypeArguments="x:Int32" Default="0" Name="TotalLectureTime" />
+                    <Variable x:TypeArguments="x:Double" Default="0" Name="TotalLectureTime" />
                     <Variable x:TypeArguments="x:String" Name="PersonID" />
                     <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Default="[new Dictionary(of string, Object)]" Name="TeacherDetails" />
                     <Variable x:TypeArguments="x:String" Name="programName" />
-                    <Variable x:TypeArguments="x:Int32" Name="productSum" />
-                    <Variable x:TypeArguments="x:Int32" Name="Percentages" />
+                    <Variable x:TypeArguments="x:Double" Name="productSum" />
+                    <Variable x:TypeArguments="x:Double" Name="Percentages" />
                     <Variable x:TypeArguments="x:String" Name="Sign" />
                     <Variable x:TypeArguments="x:String" Name="QueueReference" />
                     <Variable x:TypeArguments="ui:QueueItem" Name="TransactionItem" />
@@ -564,19 +567,19 @@
                       <InArgument x:TypeArguments="x:String">["Sign: " + Sign +" Date: "+ now.ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1690,1669" sap2010:WorkflowViewState.IdRef="ForEach`1_35" Values="[Teacher.Value(&quot;groups&quot;)]">
+                  <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1690,1964" sap2010:WorkflowViewState.IdRef="ForEach`1_35" Values="[Teacher.Value(&quot;groups&quot;)]">
                     <ui:ForEach.Body>
                       <ActivityAction x:TypeArguments="njl:JObject">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="njl:JObject" Name="currentItem" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Group Body" sap:VirtualizedContainerService.HintSize="583,1542" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <Sequence DisplayName="Group Body" sap:VirtualizedContainerService.HintSize="1099,1837" sap2010:WorkflowViewState.IdRef="Sequence_15">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="GroupID" />
                             <Variable x:TypeArguments="x:String" Name="Group" />
                             <Variable x:TypeArguments="x:String" Name="CourseID" />
                             <Variable x:TypeArguments="x:String" Name="Name" />
-                            <Variable x:TypeArguments="x:Int32" Name="TotalLectureMinutes" />
+                            <Variable x:TypeArguments="x:Double" Name="TotalLectureMinutes" />
                             <Variable x:TypeArguments="x:String" Name="TeacherLectureMinutes" />
                             <Variable x:TypeArguments="x:String" Name="TeacherCount" />
                             <Variable x:TypeArguments="x:String" Name="EmployeeType" />
@@ -588,7 +591,7 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="521,318" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1037,53" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
                             <ui:MultipleAssign.AssignOperations>
                               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
@@ -625,10 +628,10 @@
                                 </ui:AssignOperation>
                                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
                                   <ui:AssignOperation.To>
-                                    <OutArgument x:TypeArguments="x:Int32">[TotalLectureMinutes]</OutArgument>
+                                    <OutArgument x:TypeArguments="x:Double">[TotalLectureMinutes]</OutArgument>
                                   </ui:AssignOperation.To>
                                   <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:Int32">[cint(currentItem("totalLectureMinutes"))]</InArgument>
+                                    <InArgument x:TypeArguments="x:Double">[cint(currentItem("totalLectureMinutes"))]</InArgument>
                                   </ui:AssignOperation.Value>
                                 </ui:AssignOperation>
                                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
@@ -659,27 +662,27 @@
                             </ui:MultipleAssign.AssignOperations>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:MultipleAssign>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="521,94" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Processing group: &quot; + GroupID]" />
-                          <If Condition="[CourseID = &quot;MENTOR&quot;]" DisplayName="If - Mentor" sap:VirtualizedContainerService.HintSize="521,53" sap2010:WorkflowViewState.IdRef="If_13">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
+                          </ui:MultipleAssign>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1037,94" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Trace" Message="[&quot;Processing group: &quot; + GroupID]" />
+                          <If Condition="[CourseID = &quot;MENTOR&quot;]" DisplayName="If - Mentor" sap:VirtualizedContainerService.HintSize="1037,613" sap2010:WorkflowViewState.IdRef="If_13">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
                             <If.Then>
-                              <Sequence sap:VirtualizedContainerService.HintSize="496,447" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                              <Sequence sap:VirtualizedContainerService.HintSize="496,451" sap2010:WorkflowViewState.IdRef="Sequence_46">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign DisplayName="Assign - Mentor" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                <Assign DisplayName="Assign - Mentor" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_18">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Boolean">[Mentor]</OutArgument>
                                   </Assign.To>
@@ -687,7 +690,7 @@
                                     <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <Assign DisplayName="Assign Mentor Program " sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_20">
+                                <Assign DisplayName="Assign Mentor Program " sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_20">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[MentorProgram]</OutArgument>
                                   </Assign.To>
@@ -695,17 +698,17 @@
                                     <InArgument x:TypeArguments="x:String">[Name]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Teacher is a mentor for: &quot; + Name]" />
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Teacher is a mentor for: &quot; + Name]" />
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <Sequence sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                              <Sequence sap:VirtualizedContainerService.HintSize="496,194" sap2010:WorkflowViewState.IdRef="Sequence_47">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign DisplayName="Assign - Mentor False" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                <Assign DisplayName="Assign - Mentor False" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_19">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Boolean">[Mentor]</OutArgument>
                                   </Assign.To>
@@ -716,7 +719,7 @@
                               </Sequence>
                             </If.Else>
                           </If>
-                          <If Condition="[GroupNr = 0]" DisplayName="If Group Nr" sap:VirtualizedContainerService.HintSize="521,53" sap2010:WorkflowViewState.IdRef="If_10">
+                          <If Condition="[GroupNr = 0]" DisplayName="If Group Nr" sap:VirtualizedContainerService.HintSize="1037,53" sap2010:WorkflowViewState.IdRef="If_10">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -724,13 +727,13 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <If.Then>
-                              <Sequence sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                              <Sequence sap:VirtualizedContainerService.HintSize="496,194" sap2010:WorkflowViewState.IdRef="Sequence_34">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign DisplayName="Assign - GroupNr" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                <Assign DisplayName="Assign - GroupNr" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_7">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Int32">[GroupNr]</OutArgument>
                                   </Assign.To>
@@ -750,7 +753,7 @@
                               </Sequence>
                             </If.Else>
                           </If>
-                          <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each - programme in group" sap:VirtualizedContainerService.HintSize="521,630" sap2010:WorkflowViewState.IdRef="ForEach`1_19" Values="[currentItem(&quot;pupilsProgramme&quot;)]">
+                          <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each - programme in group" sap:VirtualizedContainerService.HintSize="1037,630" sap2010:WorkflowViewState.IdRef="ForEach`1_19" Values="[currentItem(&quot;pupilsProgramme&quot;)]">
                             <ui:ForEach.Body>
                               <ActivityAction x:TypeArguments="njl:JObject">
                                 <ActivityAction.Argument>
@@ -762,7 +765,7 @@
                                     <Variable x:TypeArguments="x:String" Name="Programme" />
                                     <Variable x:TypeArguments="x:Int32" Name="PupilsInProgramme" />
                                     <Variable x:TypeArguments="x:String" Name="Total" />
-                                    <Variable x:TypeArguments="x:Int32" Name="Product" />
+                                    <Variable x:TypeArguments="x:Double" Name="Product" />
                                   </Sequence.Variables>
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -790,10 +793,10 @@
                                         </ui:AssignOperation>
                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
                                           <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:Int32">[Product]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Double">[Product]</OutArgument>
                                           </ui:AssignOperation.To>
                                           <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:Int32">[PupilsInProgramme * TotalLectureMinutes]</InArgument>
+                                            <InArgument x:TypeArguments="x:Double">[PupilsInProgramme * TotalLectureMinutes]</InArgument>
                                           </ui:AssignOperation.Value>
                                         </ui:AssignOperation>
                                       </scg:List>
@@ -816,7 +819,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:ForEach>
-                          <Assign sap:VirtualizedContainerService.HintSize="521,83" sap2010:WorkflowViewState.IdRef="Assign_6">
+                          <Assign sap:VirtualizedContainerService.HintSize="1037,83" sap2010:WorkflowViewState.IdRef="Assign_6">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Int32">[GroupNr]</OutArgument>
                             </Assign.To>
@@ -913,7 +916,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ForEachRow>
-                  <ui:BuildDataTable DataTable="[dt_ProgrammeSums]" DisplayName="Build Data Table - dt_ProgrammeSums" sap:VirtualizedContainerService.HintSize="1690,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Programme&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;ProductSum&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Percentage&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                  <ui:BuildDataTable DataTable="[dt_ProgrammeSums]" DisplayName="Build Data Table - dt_ProgrammeSums" sap:VirtualizedContainerService.HintSize="1690,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Programme&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;ProductSum&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Percentage&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
                   <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:Int32)" CurrentIndex="{x:Null}" DisplayName="For Each - Add Programme and Minutes To dt_ProgrammeSums" sap:VirtualizedContainerService.HintSize="1690,427" sap2010:WorkflowViewState.IdRef="ForEach`1_20" Values="[ProgrammeProductSum]">
                     <ui:ForEach.Body>
                       <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, x:Int32)">
@@ -951,10 +954,10 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <Assign DisplayName="Assign - TotalLectureTime" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_12">
                             <Assign.To>
-                              <OutArgument x:TypeArguments="x:Int32">[TotalLectureTime]</OutArgument>
+                              <OutArgument x:TypeArguments="x:Double">[TotalLectureTime]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
-                              <InArgument x:TypeArguments="x:Int32">[TotalLectureTime + Convert.ToInt32(CurrentRow("ProductSum"))]</InArgument>
+                              <InArgument x:TypeArguments="x:Double">[TotalLectureTime + Convert.ToInt32(CurrentRow("ProductSum"))]</InArgument>
                             </Assign.Value>
                           </Assign>
                         </Sequence>
@@ -967,7 +970,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ForEachRow>
-                  <If Condition="[not (TotalLectureTime = 0)]" sap:VirtualizedContainerService.HintSize="1690,1492" sap2010:WorkflowViewState.IdRef="If_14">
+                  <If Condition="[not (TotalLectureTime = 0)]" sap:VirtualizedContainerService.HintSize="1690,1510" sap2010:WorkflowViewState.IdRef="If_14">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -975,7 +978,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="592,1330" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                      <Sequence sap:VirtualizedContainerService.HintSize="592,1348" sap2010:WorkflowViewState.IdRef="Sequence_51">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1035,27 +1038,44 @@
                             <InArgument x:TypeArguments="x:Object">[MentorProgram]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign DisplayName="Assign - Gymnasium" sap:VirtualizedContainerService.HintSize="530,83" sap2010:WorkflowViewState.IdRef="Assign_31">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Object">[TeacherDetails("Gymnasium")]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Object">[Gymnasium]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_ProgrammeSums]" DisplayName="For Each - Add To Collection " sap:VirtualizedContainerService.HintSize="530,375" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="530,53" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="Assign - Gymnasium" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_31">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Object">[TeacherDetails("Gymnasium")]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Object">[Gymnasium]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
+                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_ProgrammeSums]" DisplayName="For Each - Add To Collection " sap:VirtualizedContainerService.HintSize="530,423" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,257" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="485,305" sap2010:WorkflowViewState.IdRef="Sequence_45">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="388,53" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="423,53" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
                                   <ui:MultipleAssign.AssignOperations>
                                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
@@ -1068,18 +1088,18 @@
                                       </ui:AssignOperation>
                                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_24">
                                         <ui:AssignOperation.To>
-                                          <OutArgument x:TypeArguments="x:Int32">[productSum]</OutArgument>
+                                          <OutArgument x:TypeArguments="x:Double">[productSum]</OutArgument>
                                         </ui:AssignOperation.To>
                                         <ui:AssignOperation.Value>
-                                          <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(CurrentRow("ProductSum"))]</InArgument>
+                                          <InArgument x:TypeArguments="x:Double">[Convert.ToDouble(CurrentRow("ProductSum"))]</InArgument>
                                         </ui:AssignOperation.Value>
                                       </ui:AssignOperation>
                                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_25">
                                         <ui:AssignOperation.To>
-                                          <OutArgument x:TypeArguments="x:Int32">[Percentages]</OutArgument>
+                                          <OutArgument x:TypeArguments="x:Double">[Percentages]</OutArgument>
                                         </ui:AssignOperation.To>
                                         <ui:AssignOperation.Value>
-                                          <InArgument x:TypeArguments="x:Int32">[Cint(CurrentRow("Percentage"))]</InArgument>
+                                          <InArgument x:TypeArguments="x:Double">[CDbl(CurrentRow("Percentage"))]</InArgument>
                                         </ui:AssignOperation.Value>
                                       </ui:AssignOperation>
                                     </scg:List>
@@ -1091,7 +1111,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:MultipleAssign>
-                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="388,53" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="423,101" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
                                   <ui:MultipleAssign.AssignOperations>
                                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_28">
@@ -1099,14 +1119,14 @@
                                           <OutArgument x:TypeArguments="x:Object">[TeacherDetails("Percentage_" &amp; programName)]</OutArgument>
                                         </ui:AssignOperation.To>
                                         <ui:AssignOperation.Value>
-                                          <InArgument x:TypeArguments="x:Object">[Percentages]</InArgument>
+                                          <InArgument x:TypeArguments="x:Double">[Percentages]</InArgument>
                                         </ui:AssignOperation.Value>
                                       </ui:AssignOperation>
                                     </scg:List>
                                   </ui:MultipleAssign.AssignOperations>
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -1124,7 +1144,7 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="496,820" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                      <Sequence sap:VirtualizedContainerService.HintSize="496,790" sap2010:WorkflowViewState.IdRef="Sequence_52">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1163,14 +1183,31 @@
                             <InArgument x:TypeArguments="x:Object">[TotalLectureTime.ToString]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign DisplayName="Assign - Gymnasium" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_32">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Object">[TeacherDetails("Gymnasium")]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Object">[Gymnasium]</InArgument>
-                          </Assign.Value>
-                        </Assign>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,53" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="Assign - Gymnasium" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_32">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Object">[TeacherDetails("Gymnasium")]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Object">[Gymnasium]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
                       </Sequence>
                     </If.Else>
                   </If>
