@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2013,3958</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1239,5206</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -107,10 +107,9 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1249,3853" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1249,5141" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="UserNamegateway" />
       <Variable x:TypeArguments="ss:SecureString" Name="PasswordGateway" />
@@ -121,11 +120,7 @@
       <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(of String)]" Name="UnitGuidList" />
       <Variable x:TypeArguments="x:String" Name="Gymnasium" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, njl:JObject)" Default="[new Dictionary( of String, JObject)()]" Name="MergedDict" />
-      <Variable x:TypeArguments="scg:IList(x:String)" Name="ListOfPeopleNotToHandle">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="scg:IList(x:String)" ExpressionText="New List(of String)" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:IList(x:String)" Default="[New List(of String)]" Name="ListOfPeopleNotToHandle" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -133,7 +128,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="1187,94" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="1187,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
     <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1187,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
@@ -156,7 +151,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Sequence DisplayName="Get  Unit ID from education API" sap:VirtualizedContainerService.HintSize="1187,83" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Get  Unit ID from education API" sap:VirtualizedContainerService.HintSize="1187,1379" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="njl:JToken" Name="Token" />
         <Variable x:TypeArguments="x:String" Name="Schooltype" />
@@ -165,7 +160,7 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -183,15 +178,15 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="945,53" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="945,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
         <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,295" sap2010:WorkflowViewState.IdRef="Sequence_71">
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,292" sap2010:WorkflowViewState.IdRef="Sequence_71">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;Cred_APIGateway&quot;).ToString.Trim]" CacheStrategy="None" DisplayName="Private: Get Credential" sap:VirtualizedContainerService.HintSize="388,184" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[PasswordGateway]" Username="[UserNamegateway]" />
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;Cred_APIGateway&quot;).ToString.Trim]" CacheStrategy="None" DisplayName="Private: Get Credential" sap:VirtualizedContainerService.HintSize="388,181" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[PasswordGateway]" Username="[UserNamegateway]" />
           </Sequence>
         </ui:CommentOut.Body>
         <sap:WorkflowViewStateService.ViewState>
@@ -201,10 +196,10 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;Cred_APIGateway_Prod&quot;).ToString.Trim]" CacheStrategy="None" DisplayName="Private: Get Credential" sap:VirtualizedContainerService.HintSize="945,184" sap2010:WorkflowViewState.IdRef="GetRobotCredential_3" Password="[PasswordGateway]" Username="[UserNamegateway]" />
-      <a:Get_Token ExpiresIn="{x:Null}" FoundToken="{x:Null}" TokenType="{x:Null}" DisplayName="Get Token" DomainURL="[DomainURL]" sap:VirtualizedContainerService.HintSize="945,189" sap2010:WorkflowViewState.IdRef="Get_Token_1" NumberOfTries="1" Password="[PasswordGateway]" RequestTimeout="15000" Token="[Token]" Username="[UserNamegateway]" />
+      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;Cred_APIGateway_Prod&quot;).ToString.Trim]" CacheStrategy="None" DisplayName="Private: Get Credential" sap:VirtualizedContainerService.HintSize="945,181" sap2010:WorkflowViewState.IdRef="GetRobotCredential_3" Password="[PasswordGateway]" Username="[UserNamegateway]" />
+      <a:Get_Token ExpiresIn="{x:Null}" FoundToken="{x:Null}" TokenType="{x:Null}" DisplayName="Get Token" DomainURL="[DomainURL]" sap:VirtualizedContainerService.HintSize="945,186" sap2010:WorkflowViewState.IdRef="Get_Token_1" NumberOfTries="1" Password="[PasswordGateway]" RequestTimeout="15000" Token="[Token]" Username="[UserNamegateway]" />
       <a1:Get_UnitID_from_schooltype DisplayName="Get UnitID from schooltype" DomainURL="[DomainURL]" sap:VirtualizedContainerService.HintSize="945,25" sap2010:WorkflowViewState.IdRef="Get_UnitID_from_schooltype_1" Schooltype="[Schooltype]" Success="[Success]" Token="[Token]" Version="[Version]" unitDataTable="[dt_UnitDataTAble]" />
-      <If Condition="[Success]" DisplayName="If - success" sap:VirtualizedContainerService.HintSize="945,432" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[Success]" DisplayName="If - success" sap:VirtualizedContainerService.HintSize="945,430" sap2010:WorkflowViewState.IdRef="If_1">
         <If.Then>
           <Sequence sap:VirtualizedContainerService.HintSize="450,205" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
@@ -279,7 +274,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
     </Sequence>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each UnitGUID" sap:VirtualizedContainerService.HintSize="1187,53" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[UnitGuidList]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each UnitGUID" sap:VirtualizedContainerService.HintSize="1187,52" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[UnitGuidList]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
@@ -534,7 +529,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <Sequence DisplayName="Add persons not to handle to list" sap:VirtualizedContainerService.HintSize="1187,1029" sap2010:WorkflowViewState.IdRef="Sequence_64">
+    <Sequence DisplayName="Add persons not to handle to list" sap:VirtualizedContainerService.HintSize="1187,1028" sap2010:WorkflowViewState.IdRef="Sequence_64">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_PeopleNotToHandle" />
       </Sequence.Variables>
@@ -545,7 +540,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_PeopleNotToHandle]" DisplayName="Read Range Workbook people not to handle" sap:VirtualizedContainerService.HintSize="582,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Blad1" WorkbookPath="[in_Config(&quot;FilePathToBlackList&quot;).ToString]" />
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_PeopleNotToHandle]" DisplayName="For Each Row in dt_PeopleNotToHandle" sap:VirtualizedContainerService.HintSize="582,790" sap2010:WorkflowViewState.IdRef="ForEachRow_9">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_PeopleNotToHandle]" DisplayName="For Each Row in dt_PeopleNotToHandle" sap:VirtualizedContainerService.HintSize="582,789" sap2010:WorkflowViewState.IdRef="ForEachRow_9">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
@@ -654,7 +649,7 @@
                       <InArgument x:TypeArguments="x:String">[Teacher.Value("sign").ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <If Condition="[ListOfPeopleNotToHandle IsNot Nothing AndAlso&#xD;&#xA;ListOfPeopleNotToHandle.Count &gt; 0 AndAlso&#xD;&#xA;Sign IsNot Nothing AndAlso&#xD;&#xA;Not ListOfPeopleNotToHandle.Contains(Sign.ToLower)]" DisplayName="If ListOfPeopleNotToHandle Contains Sign" sap:VirtualizedContainerService.HintSize="991,1121" sap2010:WorkflowViewState.IdRef="If_19">
+                  <If Condition="[ListOfPeopleNotToHandle IsNot Nothing AndAlso&#xA;ListOfPeopleNotToHandle.Count &gt; 0 AndAlso&#xA;Sign IsNot Nothing AndAlso&#xA;Not ListOfPeopleNotToHandle.Contains(Sign.ToLower)]" DisplayName="If ListOfPeopleNotToHandle Contains Sign" sap:VirtualizedContainerService.HintSize="991,1121" sap2010:WorkflowViewState.IdRef="If_19">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
