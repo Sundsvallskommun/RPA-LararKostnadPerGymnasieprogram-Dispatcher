@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2855,7215</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1938,8289</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -111,9 +111,10 @@
       <AssemblyReference>UiPath.Web</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1948,7150" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1948,8224" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="UserNamegateway" />
       <Variable x:TypeArguments="ss:SecureString" Name="PasswordGateway" />
@@ -146,18 +147,18 @@
               <InArgument x:TypeArguments="x:String">[in_Config("DomainURL").ToString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+          <ui:AssignOperation sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="AssignOperation_9">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">[Version]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">1.0</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_Config("EducationAPIVersion").ToString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Sequence DisplayName="Get  Unit ID from education API" sap:VirtualizedContainerService.HintSize="1886,81" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Get  Unit ID from education API" sap:VirtualizedContainerService.HintSize="1886,1155" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="njl:JToken" Name="Token" />
         <Variable x:TypeArguments="x:String" Name="Schooltype" />
@@ -166,7 +167,7 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -184,24 +185,6 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="945,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,292" sap2010:WorkflowViewState.IdRef="Sequence_71">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;Cred_APIGateway&quot;).ToString.Trim]" CacheStrategy="None" DisplayName="Private: Get Credential" sap:VirtualizedContainerService.HintSize="388,181" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[PasswordGateway]" Username="[UserNamegateway]" />
-          </Sequence>
-        </ui:CommentOut.Body>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:CommentOut>
       <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;Cred_APIGateway_Prod&quot;).ToString.Trim]" CacheStrategy="None" DisplayName="Private: Get Credential" sap:VirtualizedContainerService.HintSize="945,52" sap2010:WorkflowViewState.IdRef="GetRobotCredential_3" Password="[PasswordGateway]" Username="[UserNamegateway]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -510,7 +493,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:MultipleAssign sap2010:Annotation.AnnotationText="använts för att testa olika månader.&#xD;&#xA;" DisplayName="Multiple Assign Last Month" sap:VirtualizedContainerService.HintSize="423,205" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
+                          <ui:MultipleAssign sap2010:Annotation.AnnotationText="använts för att testa olika månader.&#xA;" DisplayName="Multiple Assign Last Month" sap:VirtualizedContainerService.HintSize="423,205" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
                             <ui:MultipleAssign.AssignOperations>
                               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                 <ui:AssignOperation sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="AssignOperation_35">
@@ -569,7 +552,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </a:Get_Token>
-              <a1:GetTeacherLectureMinutes DomainURL="[DomainURL]" FromDate="[FromDate]" sap:VirtualizedContainerService.HintSize="1015,25" sap2010:WorkflowViewState.IdRef="GetTeacherLectureMinutes_1" JSONarray="[JSONArray]" Success="[Success]" ToDate="[ToDate]" Token="[Token]" UnitID="[UnitID]" Version="[Version]" />
+              <a1:GetTeacherLectureMinutes DomainURL="[DomainURL]" FromDate="[FromDate]" sap:VirtualizedContainerService.HintSize="1211,25" sap2010:WorkflowViewState.IdRef="GetTeacherLectureMinutes_1" JSONarray="[JSONArray]" Success="[Success]" ToDate="[ToDate]" Token="[Token]" UnitID="[UnitID]" Version="[Version]" />
               <If Condition="[Success]" DisplayName="If - success" sap:VirtualizedContainerService.HintSize="1015,53" sap2010:WorkflowViewState.IdRef="If_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
